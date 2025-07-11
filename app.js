@@ -3,6 +3,7 @@ const path = require('path');
 
 // External Module
 const express = require('express');
+require("dotenv").config(); 
 
 //Local Module
 const storeRouter = require("./routes/storeRouter")
@@ -35,7 +36,8 @@ const PORT = 3000;
 //   });
 // })
 
-const DB_path="mongodb+srv://gshivamg:Qwerty%401234@devcluster.17r4ilt.mongodb.net/airbnb?retryWrites=true&w=majority&appName=devCluster"
+const DB_path=process.env.MONGO_URI
+
 
 mongoose.connect(DB_path).then(()=>{
   console.log("connected to mongo!!")
