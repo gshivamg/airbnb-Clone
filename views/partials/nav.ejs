@@ -8,34 +8,35 @@
           >airbnb</a
         >
       </li>
-      <li>
-        <a
-          href="/homes"
-          class="<%= currentPage === 'Home' ? 'bg-red-400' : 'hover:bg-red-400' %> py-2 px-4 rounded transition duration-300"
-          >Homes-List</a
-        >
-      </li>
-      <li>
-        <a
-          href="/favourites"
-          class="<%= currentPage === 'favourites' ? 'bg-red-400' : 'hover:bg-red-400' %> py-2 px-4 rounded transition duration-300"
-          >Favourites</a
-        >
-      </li>
-      <li>
-        <a
-          href="/bookings"
-          class="<%= currentPage === 'bookings' ? 'bg-red-400' : 'hover:bg-red-400' %> py-2 px-4 rounded transition duration-300"
-          >Bookings</a
-        >
-      </li>
-      <li>
-        <a
-          href="/host/host-home-list"
-          class="<%= currentPage === 'host-homes' ? 'bg-red-400' : 'hover:bg-red-400' %> py-2 px-4 rounded transition duration-300"
-          >Host Homes</a
-        >
-      </li>
+      <% if(isLoggedIn) { %>
+        <li>
+          <a
+            href="/homes"
+            class="<%= currentPage === 'Home' ? 'bg-red-400' : 'hover:bg-red-400' %> py-2 px-4 rounded transition duration-300"
+            >Homes-List</a
+          >
+        </li>
+        <li>
+          <a
+            href="/favourites"
+            class="<%= currentPage === 'favourites' ? 'bg-red-400' : 'hover:bg-red-400' %> py-2 px-4 rounded transition duration-300"
+            >Favourites</a
+          >
+        </li>
+        <li>
+          <a
+            href="/bookings"
+            class="<%= currentPage === 'bookings' ? 'bg-red-400' : 'hover:bg-red-400' %> py-2 px-4 rounded transition duration-300"
+            >Bookings</a
+          >
+        </li>
+        <li>
+          <a
+            href="/host/host-home-list"
+            class="<%= currentPage === 'host-homes' ? 'bg-red-400' : 'hover:bg-red-400' %> py-2 px-4 rounded transition duration-300"
+            >Host Homes</a
+          >
+        </li>
       <li>
         <a
           href="/host/add-home"
@@ -43,13 +44,20 @@
           >Add Home</a
         >
       </li>
-      <li>
+      <% } %>
+    <li>
+      <% if(!isLoggedIn){%>
         <a
           href="/login"
           class="hover:bg-red-400' %> py-2 px-4 rounded transition duration-300"
-          >Login</a
-        >
-      </li>
+          >Login</a>
+          <% } else { %>
+            <form action="/logout" method="post">
+              <button type="submit" class="hover:bg-red-400 py-2 px-4 rounded transition duration-300"
+              >Logout</button>
+            </form>
+        <% } %>
+    </li>
     </ul>
   </nav>
 </header>
