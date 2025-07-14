@@ -1,53 +1,31 @@
-const mongoose =require("mongoose");
-const favourite = require("./favourite");
+const mongoose = require('mongoose');
 
-const homeSchema=mongoose.Schema({
-  houseName:{
+const homeSchema = mongoose.Schema({
+  houseName: {
     type: String,
     required: true
   },
-  price:{
+  price: {
     type: Number,
     required: true
   },
-  location:{
+  location: {
     type: String,
     required: true
   },
-  rating:{
-    type: String,
+  rating: {
+    type: Number,
     required: true
   },
-  photoUrl:String,
-  description:String
-})
+  photoUrl: String,
+  description: String,
+});
 
+// homeSchema.pre('findOneAndDelete', async function(next) {
+//   console.log('Came to pre hook while deleting a home');
+//   const homeId = this.getQuery()._id;
+//   await favourite.deleteMany({houseId: homeId});
+//   next();
+// });
 
-homeSchema.pre("findOneAndDelete",async function(next){
-  const homeId=this.getQuery()._id;
-  await favourite.deleteMany({houseId :homeId});
-  next();
-})
-
-
-
-
-
-
-module.exports=mongoose.model("Home",homeSchema);
-
-/**
- * 
- * 
-  all the below feature are provide by mongoose by default we need not to code them any more ..
- * 
- * save()
- * 
- * fetchAll()
- * 
- * findById(homeId)
- * 
- * deleteById(homeId)
- * 
- */
-
+module.exports = mongoose.model('Home', homeSchema);
