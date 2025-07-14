@@ -12,14 +12,14 @@ Built using **Node.js**, **Express.js**, **MongoDB (Mongoose)**, and **EJS** tem
 - ❤️ Mark/unmark favourites
 - 📱 Responsive UI with Tailwind CSS
 - 🗂️ MongoDB/Mongoose-based data persistence
+- 🔐 User Authentication (sign up / login)
+- 📊 Host & User Dashboards
 
 ---
 
 ## 🚧 Upcoming Features
 
-- 🔐 User Authentication (sign up / login)
 - 📅 Booking system for guests
-- 📊 Host & User Dashboards
 - 🛠️ Admin panel
 - 🖼️ Image uploads (Cloudinary / Multer)
 
