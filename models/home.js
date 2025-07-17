@@ -17,7 +17,7 @@ const homeSchema = mongoose.Schema({
     type: Number,
     required: true
   },
-  photoUrl: String,
+  photo: String,
   description: String,
 });
 
