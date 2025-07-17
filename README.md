@@ -14,6 +14,7 @@ Built using **Node.js**, **Express.js**, **MongoDB (Mongoose)**, and **EJS** tem
 - 🗂️ MongoDB/Mongoose-based data persistence
 - 🔐 User Authentication (sign up / login)
 - 📊 Host & User Dashboards
+- 🖼️ Image uploads ( Multer)
 
 ---
 
@@ -21,7 +22,6 @@ Built using **Node.js**, **Express.js**, **MongoDB (Mongoose)**, and **EJS** tem
 
 - 📅 Booking system for guests
 - 🛠️ Admin panel
-- 🖼️ Image uploads (Cloudinary / Multer)
 
 ---
 
